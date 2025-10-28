@@ -1,0 +1,31 @@
+import java.util.Arrays;
+import java.util.List;
+
+public class Movie extends Media{
+
+    private int duration;
+
+    public Movie() {
+    }
+
+    public Movie(int duration) {
+        this.duration = duration;
+    }
+
+    public Movie(String title, String auteur, String isbn, double price, int duration) {
+        super(title, auteur, isbn, price);
+        this.duration = duration;
+    }
+
+    public String getMediaType() {
+        if (duration >= 120) {
+            return "Long Movie";
+        } else {
+            return "Movie";
+        }
+    }
+
+    public String toString() {
+        return getTitle() + ", Director: " + getAuteur() + ", Duration: " + duration  + " Type: " + getMediaType();
+    }
+}
