@@ -1,0 +1,34 @@
+import java.util.Arrays;
+import java.util.List;
+
+public class Music extends Media {
+    private String artist;
+//    User listen = new User();
+
+    public Music(){
+    }
+    public Music(String artist) {
+        this.artist = artist;
+    }
+
+    public Music(String title, String auteur, String isbn, double price, String artist) {
+        super(title, auteur, isbn, price);
+        this.artist = artist;
+    }
+
+    public void listen(User user) {
+        user.getPurchaseMediaList().add(this);
+        System.out.println(user.getUserName() + " is listening to: " + getTitle());
+    }
+
+
+    public String getMediaType() {
+        return "Music";
+    }
+
+    public String toString() {
+        return getTitle() + ", Artist: " + artist + ", Price: " + getPrice() + ", Type: " + getMediaType();
+    }
+}
+
+
