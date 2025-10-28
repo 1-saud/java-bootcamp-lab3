@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+
+        User user1 = new User("Saud", "saud@fonda.agency", new ArrayList<>(), new ArrayList<>());
+
+        Book b1 = new Book("Java Book", "Saud", "111", 50.0, 2, new Review[100], 0);
+        System.out.println(b1.getAverageRating());
+        b1.purchase(user1);
+        b1.restock(1);
+        System.out.println(b1.toString());
+
+        Novel n1 = new Novel("The Dream", "Ahmed", "222", 30.0, 1, new Review[100], 0, "Ad");
+        System.out.println(n1.toString());
+
+        Music music1 = new Music("Calm", "rtist", "555", 10.0, "Artist");
+        music1.listen(user1);
+        System.out.println(music1.toString());
+
+        Store store = new Store();
+        store.addUser(user1);
+        store.addMedia(b1);
+
+    }
+}
